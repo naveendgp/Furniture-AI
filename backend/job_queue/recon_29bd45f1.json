@@ -1,0 +1,19 @@
+{
+  "job_id": "recon_29bd45f1",
+  "item_id": "item_1778523235234",
+  "status": "pending",
+  "progress_percent": 0.0,
+  "current_stage": "pending",
+  "message": "Job queued",
+  "error": null,
+  "created_at": "2026-05-11T23:43:55.279921",
+  "started_at": null,
+  "completed_at": null,
+  "image_count": 5,
+  "final_glb_path": null,
+  "metadata": {
+    "name": "Screenshot (9)",
+    "category": "other",
+    "image_count": 5
+  }
+}
