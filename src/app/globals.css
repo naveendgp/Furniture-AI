@@ -1,26 +1,301 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* ─── Color tokens ─────────────────────────────────────── */
+    --c-bg:        #0c0c0e;
+    --c-surface-1: #131316;
+    --c-surface-2: #1a1a1f;
+    --c-surface-3: #222228;
+    --c-border:    rgba(255,255,255,0.07);
+    --c-border-md: rgba(255,255,255,0.12);
+
+    --c-txt-1: rgba(255,255,255,0.92);
+    --c-txt-2: rgba(255,255,255,0.58);
+    --c-txt-3: rgba(255,255,255,0.32);
+
+    --c-accent:       #3b82f6;
+    --c-accent-hover: #2563eb;
+    --c-accent-glow:  rgba(59,130,246,0.25);
+
+    --c-success: #22c55e;
+    --c-warn:    #f59e0b;
+    --c-danger:  #ef4444;
+
+    /* ─── Spacing (8px grid) ───────────────────────────────── */
+    --sp-1: 4px;
+    --sp-2: 8px;
+    --sp-3: 12px;
+    --sp-4: 16px;
+    --sp-5: 20px;
+    --sp-6: 24px;
+    --sp-8: 32px;
+    --sp-10: 40px;
+
+    /* ─── Radii ────────────────────────────────────────────── */
+    --r-sm: 8px;
+    --r-md: 12px;
+    --r-lg: 16px;
+    --r-xl: 20px;
+    --r-2xl: 24px;
+    --r-pill: 9999px;
+
+    /* ─── Shadows ──────────────────────────────────────────── */
+    --sh-panel: 0 8px 32px rgba(0,0,0,0.55), 0 1px 0 rgba(255,255,255,0.04) inset;
+    --sh-card:  0 2px 8px rgba(0,0,0,0.4);
+    --sh-modal: 0 40px 100px rgba(0,0,0,0.85);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── Reset ─────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background: var(--c-bg);
+  color: var(--c-txt-1);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  line-height: 1.5;
 }
+
+/* ─── App shell ──────────────────────────────────────────────── */
+.app-shell {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: var(--c-bg);
+}
+
+/* ─── Main workspace row ─────────────────────────────────────── */
+.workspace {
+  flex: 1;
+  display: flex;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ─── Side panels ────────────────────────────────────────────── */
+.side-panel {
+  width: 280px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--c-surface-1);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-xl);
+  box-shadow: var(--sh-panel);
+  overflow: hidden;
+}
+
+/* ─── Scene area ─────────────────────────────────────────────── */
+.scene-area {
+  flex: 1;
+  position: relative;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: #08080a;
+  box-shadow: 0 0 0 1px var(--c-border), var(--sh-panel);
+  min-width: 0;
+}
+
+/* ─── Top bar ────────────────────────────────────────────────── */
+.topbar {
+  height: 56px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 var(--sp-4);
+  gap: var(--sp-3);
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface-1);
+}
+
+/* ─── Panel sections ─────────────────────────────────────────── */
+.panel-header {
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-bottom: 1px solid var(--c-border);
+  flex-shrink: 0;
+}
+
+.panel-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: var(--sp-4);
+}
+
+.panel-footer {
+  padding: var(--sp-4) var(--sp-5);
+  border-top: 1px solid var(--c-border);
+  flex-shrink: 0;
+  background: var(--c-surface-1);
+}
+
+/* ─── Section label ──────────────────────────────────────────── */
+.section-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-txt-3);
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 select-none cursor-pointer;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 select-none cursor-pointer bg-blue-600 hover:bg-blue-500 text-white;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+    box-shadow: 0 2px 8px rgba(59,130,246,0.3);
+  }
+  .btn-primary:hover { box-shadow: 0 4px 16px rgba(59,130,246,0.4); }
+  .btn-primary:disabled { @apply opacity-40 cursor-not-allowed; box-shadow: none; }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 select-none cursor-pointer text-white/60 hover:text-white hover:bg-white/5;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+  .btn-ghost:disabled { @apply opacity-40 cursor-not-allowed; }
+
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 select-none cursor-pointer bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 13px;
+  }
+
+  .btn-sm {
+    height: 30px !important;
+    padding: 0 12px !important;
+    font-size: 12px !important;
+    border-radius: 10px !important;
+  }
+
+  .btn-icon {
+    @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-150 select-none cursor-pointer text-white/45 hover:text-white hover:bg-white/5;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    font-size: 13px;
+  }
+}
+
+/* ─── Segmented control ──────────────────────────────────────── */
+.seg-control {
+  display: flex;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  padding: 3px;
+  gap: 2px;
+}
+
+.seg-btn {
+  flex: 1;
+  height: 28px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-txt-3);
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+.seg-btn.active {
+  background: var(--c-surface-3);
+  color: var(--c-txt-1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+.seg-btn:not(.active):hover {
+  color: var(--c-txt-2);
+  background: rgba(255,255,255,0.04);
+}
+
+/* ─── Input ──────────────────────────────────────────────────── */
+.field {
+  width: 100%;
+  height: 38px;
+  padding: 0 12px;
+  background: var(--c-surface-2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-md);
+  color: var(--c-txt-1);
+  font-size: 13px;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.field:focus { border-color: rgba(59,130,246,0.5); }
+.field::placeholder { color: var(--c-txt-3); }
+
+/* ─── Range slider ───────────────────────────────────────────── */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 3px;
+  background: var(--c-surface-3);
+  border-radius: var(--r-pill);
+  cursor: pointer;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.2); }
+input[type="range"]::-moz-range-thumb {
+  width: 14px; height: 14px;
+  border-radius: 50%; border: none;
+  background: white;
+  cursor: pointer;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.10);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.18); }
+
+/* ─── Canvas ─────────────────────────────────────────────────── */
+#scene-container canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  outline: none;
+}
+
+button, input, select, textarea { font: inherit; }
+button:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 2px; }
