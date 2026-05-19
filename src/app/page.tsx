@@ -8,6 +8,7 @@ import { RightPanel } from '@/components/panels/RightPanel';
 import { MultiViewUploadDialog } from '@/components/dialogs/MultiViewUploadDialog';
 import { RoomUploadDialog } from '@/components/dialogs/RoomUploadDialog';
 import { EnhanceDialog } from '@/components/dialogs/EnhanceDialog';
+import { VideoUploadDialog } from '@/components/dialogs/VideoUploadDialog';
 
 const Scene = dynamic(
   () => import('@/components/canvas/Scene').then((m) => ({ default: m.Scene })),
@@ -24,6 +25,7 @@ const Scene = dynamic(
 export default function HomePage() {
   const [showRoomUpload,      setShowRoomUpload]      = useState(false);
   const [showFurnitureUpload, setShowFurnitureUpload] = useState(false);
+  const [showVideoUpload,     setShowVideoUpload]     = useState(false);
   const [showEnhance,         setShowEnhance]         = useState(false);
 
   return (
@@ -32,6 +34,7 @@ export default function HomePage() {
       <TopBar
         onUploadRoom={()      => setShowRoomUpload(true)}
         onUploadFurniture={() => setShowFurnitureUpload(true)}
+        onUploadVideo={()     => setShowVideoUpload(true)}
         onEnhance={()         => setShowEnhance(true)}
       />
 
@@ -59,6 +62,10 @@ export default function HomePage() {
       <EnhanceDialog
         open={showEnhance}
         onClose={() => setShowEnhance(false)}
+      />
+      <VideoUploadDialog
+        open={showVideoUpload}
+        onClose={() => setShowVideoUpload(false)}
       />
     </div>
   );

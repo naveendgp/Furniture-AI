@@ -89,6 +89,11 @@ function BillboardSprite({
   const loadedCountRef = useRef(0);
   const isMultiView = angleLabels.length > 1;
 
+  // DEBUG: log on mount to check if multi-view data is present
+  useEffect(() => {
+    console.log(`[BillboardSprite] isMultiView=${isMultiView}, labels=${JSON.stringify(angleLabels)}, urls=${imageUrls.length}`);
+  }, [isMultiView, angleLabels, imageUrls]);
+
   useEffect(() => {
     if (imageUrls.length === 0) return;
     const loader = new THREE.TextureLoader();
@@ -115,8 +120,6 @@ function BillboardSprite({
 
   useFrame(() => {
     if (meshRef.current && meshRef.current.parent) {
-      // We want the billboard to perfectly face the camera in world space.
-      // Since it is inside a rotated group, we must counteract the parent's world rotation.
       const parentQuat = meshRef.current.parent.getWorldQuaternion(new THREE.Quaternion());
       meshRef.current.quaternion.copy(parentQuat.invert().multiply(camera.quaternion));
     }
@@ -129,6 +132,7 @@ function BillboardSprite({
     const bestIdx = findBestAngleIndex(viewAngle, angleLabels);
 
     if (bestIdx !== currentIndex && bestIdx >= 0) {
+      console.log(`[2.5D] Angle swap: ${angleLabels[currentIndex]} → ${angleLabels[bestIdx]} (viewAngle=${viewAngle.toFixed(0)}°, rotY=${(furnitureRotationY * 180/Math.PI).toFixed(0)}°, textures=${textures.filter(Boolean).length}/${imageUrls.length})`);
       setCurrentIndex(bestIdx);
     }
   });
@@ -190,6 +194,11 @@ export function FurnitureItem({ item, floorY }: FurnitureItemProps) {
   const isSelected = selectedId === item.instanceId;
 
   const hasMultiView = item.asset.angleImages && item.asset.angleImages.length >= 2;
+
+  // DEBUG
+  useEffect(() => {
+    console.log(`[FurnitureItem] id=${item.assetId} hasMultiView=${hasMultiView} angleImages=${item.asset.angleImages?.length} angleLabels=${item.asset.angleLabels?.length}`, item.asset.angleLabels);
+  }, []);
 
   // Target dimensions in 3D world units.
   // worldScale = (6 world units) / (roomWidthCm) so furniture scales proportionally to the room.

@@ -17,6 +17,10 @@ interface FurnitureStore {
   fetchAll: () => Promise<void>;
   uploadFurniture: (data: { name: string; category: string; width: number; height: number; depth: number; image: File }) => Promise<FurnitureAsset>;
   uploadMultiView: (data: { name: string; category: string; width: number; height: number; depth: number; images: File[]; angles: string[] }) => Promise<FurnitureAsset>;
+  uploadVideo: (data: { name: string; category: string; width: number; height: number; depth: number; video: File }) => Promise<FurnitureAsset>;
+  extractAngles: (data: { name: string; category: string; width: number; height: number; depth: number; video: File }) => Promise<any>;
+  removeBackgrounds: (itemId: string) => Promise<any>;
+  finalizeVideoUpload: (itemId: string) => Promise<void>;
   pollReconstruction: (id: string) => Promise<void>;
   deleteAsset: (id: string) => Promise<void>;
   clearError: () => void;
@@ -90,6 +94,58 @@ export const useFurnitureStore = create<FurnitureStore>((set, get) => ({
     set({ uploading: true, error: null });
     try {
       const response = await api.uploadMultiViewFurniture(data);
+      const asset = mapApiToAsset(response);
+      set((s) => ({ assets: [...s.assets, asset], uploading: false }));
+      return asset;
+    } catch (err) {
+      set({ error: err instanceof Error ? err.message : 'Upload failed', uploading: false });
+      throw err;
+    }
+  },
+
+  extractAngles: async (data) => {
+    set({ uploading: true, error: null });
+    try {
+      const response = await api.extractAngles(data);
+      set({ uploading: false });
+      return response; // Raw response with raw angle images
+    } catch (err) {
+      set({ error: err instanceof Error ? err.message : 'Extraction failed', uploading: false });
+      throw err;
+    }
+  },
+
+  removeBackgrounds: async (itemId: string) => {
+    set({ uploading: true, error: null });
+    try {
+      const response = await api.removeBackgrounds(itemId);
+      set({ uploading: false });
+      return response; // Processed angle images
+    } catch (err) {
+      set({ error: err instanceof Error ? err.message : 'BG removal failed', uploading: false });
+      throw err;
+    }
+  },
+
+  finalizeVideoUpload: async (itemId: string) => {
+    try {
+      const resp = await api.listFurniture();
+      const item = resp.items.find((i: any) => i.id === itemId);
+      if (item) {
+        const asset = mapApiToAsset(item);
+        set((s) => {
+          const exists = s.assets.some((a) => a.id === itemId);
+          if (exists) return {};
+          return { assets: [...s.assets, asset] };
+        });
+      }
+    } catch { /* ignore */ }
+  },
+
+  uploadVideo: async (data) => {
+    set({ uploading: true, error: null });
+    try {
+      const response = await api.uploadFurnitureVideo(data);
       const asset = mapApiToAsset(response);
       set((s) => ({ assets: [...s.assets, asset], uploading: false }));
       return asset;

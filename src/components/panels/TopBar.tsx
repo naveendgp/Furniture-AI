@@ -2,16 +2,17 @@
 
 import { useCallback } from 'react';
 import { useRoomStore } from '@/stores/roomStore';
-import { Image as ImageIcon, Plus, Download, Sofa, Sparkles } from 'lucide-react';
+import { Image as ImageIcon, Plus, Download, Sofa, Sparkles, Video } from 'lucide-react';
 import { captureCompositeScene } from '@/lib/capture';
 
 interface Props {
   onUploadRoom: () => void;
   onUploadFurniture: () => void;
+  onUploadVideo: () => void;
   onEnhance: () => void;
 }
 
-export function TopBar({ onUploadRoom, onUploadFurniture, onEnhance }: Props) {
+export function TopBar({ onUploadRoom, onUploadFurniture, onUploadVideo, onEnhance }: Props) {
   const room = useRoomStore((s) => s.room);
 
   const handleExport = useCallback(async () => {
@@ -59,6 +60,16 @@ export function TopBar({ onUploadRoom, onUploadFurniture, onEnhance }: Props) {
         >
           <Plus className="w-3.5 h-3.5" />
           Add Furniture
+        </button>
+
+        <button
+          id="btn-upload-video"
+          onClick={onUploadVideo}
+          className="btn btn-sm flex items-center gap-1.5 text-purple-300 hover:text-white border border-purple-500/30 bg-purple-500/10 hover:bg-purple-500/20 hover:border-purple-400/50 transition-all"
+          title="Upload 360° orbit video — auto extracts 8 directional angles"
+        >
+          <Video className="w-3.5 h-3.5" />
+          360° Video
         </button>
       </div>
 

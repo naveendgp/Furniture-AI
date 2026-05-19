@@ -69,6 +69,57 @@ export async function uploadMultiViewFurniture(params: {
   return apiFetch<any>('/api/furniture/upload-multiview', { method: 'POST', body: formData });
 }
 
+/** Phase 1: Extract angles from 360° video (no bg removal) */
+export async function extractAngles(params: {
+  name: string;
+  category: string;
+  width: number;
+  height: number;
+  depth: number;
+  video: File;
+}) {
+  const formData = new FormData();
+  formData.append('name', params.name);
+  formData.append('category', params.category);
+  formData.append('width', params.width.toString());
+  formData.append('height', params.height.toString());
+  formData.append('depth', params.depth.toString());
+  formData.append('video', params.video);
+  return apiFetch<any>('/api/furniture/extract-angles', { method: 'POST', body: formData });
+}
+
+/** Phase 2: Remove backgrounds from extracted angle frames */
+export async function removeBackgrounds(itemId: string) {
+  return apiFetch<any>(`/api/furniture/${itemId}/remove-backgrounds`, { method: 'POST' });
+}
+
+/** Legacy: Full pipeline in one call */
+export async function uploadFurnitureVideo(params: {
+  name: string;
+  category: string;
+  width: number;
+  height: number;
+  depth: number;
+  video: File;
+}) {
+  const formData = new FormData();
+  formData.append('name', params.name);
+  formData.append('category', params.category);
+  formData.append('width', params.width.toString());
+  formData.append('height', params.height.toString());
+  formData.append('depth', params.depth.toString());
+  formData.append('video', params.video);
+  return apiFetch<any>('/api/furniture/upload-video', { method: 'POST', body: formData });
+}
+
+/** Replace a single angle image for a furniture item */
+export async function replaceAngleImage(itemId: string, angle: string, image: File) {
+  const formData = new FormData();
+  formData.append('angle', angle);
+  formData.append('image', image);
+  return apiFetch<any>(`/api/furniture/${itemId}/replace-angle`, { method: 'PATCH', body: formData });
+}
+
 /** Poll reconstruction progress */
 export async function getReconstructionStatus(itemId: string) {
   return apiFetch<{
