@@ -1,130 +1,41 @@
 [
   {
-    "id": "376bc6b2",
-    "name": "Screenshot (10)",
+    "id": "e75345a2",
+    "name": "sofa video",
     "category": "other",
-    "width": 210.0,
-    "height": 95.0,
-    "depth": 90.0,
-    "original_image": "/uploads/furniture/multiview/376bc6b2/front.png",
-    "processed_image": "/uploads/furniture/processed/376bc6b2.png",
+    "width": 200.0,
+    "height": 90.0,
+    "depth": 85.0,
+    "original_image": "/uploads/furniture/multiview/e75345a2/raw_front.png",
+    "processed_image": "/uploads/furniture/processed/e75345a2.png",
     "angle_images": [
-      "/uploads/furniture/multiview/376bc6b2/front.png",
-      "/uploads/furniture/multiview/376bc6b2/front_right.png",
-      "/uploads/furniture/multiview/376bc6b2/right.png",
-      "/uploads/furniture/multiview/376bc6b2/back.png",
-      "/uploads/furniture/multiview/376bc6b2/left.png"
+      "/uploads/furniture/multiview/e75345a2/front.png",
+      "/uploads/furniture/multiview/e75345a2/front_right.png",
+      "/uploads/furniture/multiview/e75345a2/right.png",
+      "/uploads/furniture/multiview/e75345a2/back_right.png",
+      "/uploads/furniture/multiview/e75345a2/back.png",
+      "/uploads/furniture/multiview/e75345a2/back_left.png",
+      "/uploads/furniture/multiview/e75345a2/left.png",
+      "/uploads/furniture/multiview/e75345a2/front_left.png"
     ],
     "angle_labels": [
       "front",
       "front_right",
       "right",
+      "back_right",
       "back",
-      "left"
+      "back_left",
+      "left",
+      "front_left"
     ],
     "sprite_sheet": null,
-    "angle_count": 5,
+    "angle_count": 8,
     "model_url": "",
     "thumbnail": "",
     "builtin": false,
     "generation_status": "completed",
-    "upload_mode": "multiview",
-    "created_at": "2026-05-17T00:10:53.209613"
-  },
-  {
-    "id": "867304f5",
-    "name": "sofa",
-    "category": "other",
-    "width": 210.0,
-    "height": 95.0,
-    "depth": 90.0,
-    "original_image": "/uploads/furniture/multiview/867304f5/front.png",
-    "processed_image": "/uploads/furniture/processed/867304f5.png",
-    "angle_images": [
-      "/uploads/furniture/multiview/867304f5/front.png",
-      "/uploads/furniture/multiview/867304f5/front_right.png",
-      "/uploads/furniture/multiview/867304f5/right.png",
-      "/uploads/furniture/multiview/867304f5/back.png",
-      "/uploads/furniture/multiview/867304f5/left.png"
-    ],
-    "angle_labels": [
-      "front",
-      "front_right",
-      "right",
-      "back",
-      "left"
-    ],
-    "sprite_sheet": null,
-    "angle_count": 5,
-    "model_url": "",
-    "thumbnail": "",
-    "builtin": false,
-    "generation_status": "completed",
-    "upload_mode": "multiview",
-    "created_at": "2026-05-17T00:27:59.853865"
-  },
-  {
-    "id": "61d2a0cf",
-    "name": "wooden sofa",
-    "category": "other",
-    "width": 100.0,
-    "height": 100.0,
-    "depth": 50.0,
-    "original_image": "/uploads/furniture/multiview/61d2a0cf/front.png",
-    "processed_image": "/uploads/furniture/processed/61d2a0cf.png",
-    "angle_images": [
-      "/uploads/furniture/multiview/61d2a0cf/front.png",
-      "/uploads/furniture/multiview/61d2a0cf/front_right.png",
-      "/uploads/furniture/multiview/61d2a0cf/right.png",
-      "/uploads/furniture/multiview/61d2a0cf/back.png",
-      "/uploads/furniture/multiview/61d2a0cf/left.png"
-    ],
-    "angle_labels": [
-      "front",
-      "front_right",
-      "right",
-      "back",
-      "left"
-    ],
-    "sprite_sheet": null,
-    "angle_count": 5,
-    "model_url": "",
-    "thumbnail": "",
-    "builtin": false,
-    "generation_status": "completed",
-    "upload_mode": "multiview",
-    "created_at": "2026-05-17T22:20:56.765710"
-  },
-  {
-    "id": "2409cbe2",
-    "name": "Screenshot (10)",
-    "category": "other",
-    "width": 210.0,
-    "height": 95.0,
-    "depth": 90.0,
-    "original_image": "/uploads/furniture/multiview/2409cbe2/front.png",
-    "processed_image": "/uploads/furniture/processed/2409cbe2.png",
-    "angle_images": [
-      "/uploads/furniture/multiview/2409cbe2/front.png",
-      "/uploads/furniture/multiview/2409cbe2/front_right.png",
-      "/uploads/furniture/multiview/2409cbe2/right.png",
-      "/uploads/furniture/multiview/2409cbe2/back.png",
-      "/uploads/furniture/multiview/2409cbe2/left.png"
-    ],
-    "angle_labels": [
-      "front",
-      "front_right",
-      "right",
-      "back",
-      "left"
-    ],
-    "sprite_sheet": null,
-    "angle_count": 5,
-    "model_url": "",
-    "thumbnail": "",
-    "builtin": false,
-    "generation_status": "completed",
-    "upload_mode": "multiview",
-    "created_at": "2026-05-17T23:03:27.180017"
+    "upload_mode": "video",
+    "video_source": "/uploads/furniture/videos/e75345a2.mp4",
+    "created_at": "2026-05-19T22:44:01.938822"
   }
 ]

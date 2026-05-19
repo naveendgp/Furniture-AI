@@ -5048,5 +5048,2121 @@
     ],
     "confidence": 0.6638800549795596,
     "created_at": "2026-05-17T23:01:24.516904"
+  },
+  {
+    "id": "a5e3678a",
+    "image_path": "/uploads/rooms/originals/a5e3678a.png",
+    "depth_map_path": "/uploads/rooms/analysis/a5e3678a_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/a5e3678a_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-18T20:20:28.288360"
+  },
+  {
+    "id": "ad127f4b",
+    "image_path": "/uploads/rooms/originals/ad127f4b.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/ad127f4b_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/ad127f4b_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-18T20:31:24.752384"
+  },
+  {
+    "id": "3eb3ece5",
+    "image_path": "/uploads/rooms/originals/3eb3ece5.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/3eb3ece5_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/3eb3ece5_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-18T20:44:01.187918"
+  },
+  {
+    "id": "84a91917",
+    "image_path": "/uploads/rooms/originals/84a91917.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/84a91917_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/84a91917_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-18T20:49:39.358897"
+  },
+  {
+    "id": "6eeff6bf",
+    "image_path": "/uploads/rooms/originals/6eeff6bf.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/6eeff6bf_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/6eeff6bf_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-19T11:31:14.767232"
+  },
+  {
+    "id": "c107b2e3",
+    "image_path": "/uploads/rooms/originals/c107b2e3.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/c107b2e3_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/c107b2e3_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-19T12:06:17.612412"
+  },
+  {
+    "id": "db072d73",
+    "image_path": "/uploads/rooms/originals/db072d73.png",
+    "depth_map_path": "/uploads/rooms/analysis/db072d73_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/db072d73_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-19T13:39:46.530228"
+  },
+  {
+    "id": "8e2158a4",
+    "image_path": "/uploads/rooms/originals/8e2158a4.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/8e2158a4_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/8e2158a4_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-19T14:11:38.587100"
+  },
+  {
+    "id": "967726b5",
+    "image_path": "/uploads/rooms/originals/967726b5.jpg",
+    "depth_map_path": "/uploads/rooms/analysis/967726b5_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/967726b5_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.2935,
+        0.998
+      ],
+      [
+        0.36883333333333335,
+        0.82225
+      ],
+      [
+        0.31266666666666665,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.99975
+      ],
+      [
+        0.9998333333333334,
+        0.80425
+      ],
+      [
+        0.368,
+        0.8
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 71.9661695955316,
+    "vanishing_point": [
+      0.3978333333333333,
+      0.40125
+    ],
+    "camera_position": [
+      0.20433333333333337,
+      1.5,
+      3.4016915202234204
+    ],
+    "camera_rotation": [
+      -0.07900000000000001,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.88,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.18,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.94,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.88,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6638800549795596,
+    "created_at": "2026-05-19T14:22:50.910318"
+  },
+  {
+    "id": "5e4e0597",
+    "image_path": "/uploads/rooms/originals/5e4e0597.png",
+    "depth_map_path": "/uploads/rooms/analysis/5e4e0597_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/5e4e0597_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-19T14:41:01.411314"
+  },
+  {
+    "id": "0a157920",
+    "image_path": "/uploads/rooms/originals/0a157920.png",
+    "depth_map_path": "/uploads/rooms/analysis/0a157920_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/0a157920_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-19T14:59:11.024451"
+  },
+  {
+    "id": "1f286a57",
+    "image_path": "/uploads/rooms/originals/1f286a57.png",
+    "depth_map_path": "/uploads/rooms/analysis/1f286a57_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/1f286a57_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-19T15:09:39.867649"
+  },
+  {
+    "id": "e9261c43",
+    "image_path": "/uploads/rooms/originals/e9261c43.jpeg",
+    "depth_map_path": "/uploads/rooms/analysis/e9261c43_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/e9261c43_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8006644518272426
+      ],
+      [
+        0.008125,
+        0.9991694352159468
+      ],
+      [
+        0.999375,
+        0.9991694352159468
+      ],
+      [
+        0.955625,
+        0.8006644518272426
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.9173680917917,
+    "vanishing_point": [
+      0.683125,
+      0.3579734219269103
+    ],
+    "camera_position": [
+      -0.36624999999999996,
+      1.5,
+      3.504131595410415
+    ],
+    "camera_rotation": [
+      -0.11362126245847178,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -1.5,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.5,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.7038337058107165,
+    "created_at": "2026-05-19T16:22:57.703056"
+  },
+  {
+    "id": "0e3f8c78",
+    "image_path": "/uploads/rooms/originals/0e3f8c78.jpeg",
+    "depth_map_path": "/uploads/rooms/analysis/0e3f8c78_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/0e3f8c78_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8006644518272426
+      ],
+      [
+        0.008125,
+        0.9991694352159468
+      ],
+      [
+        0.999375,
+        0.9991694352159468
+      ],
+      [
+        0.955625,
+        0.8006644518272426
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.9173680917917,
+    "vanishing_point": [
+      0.683125,
+      0.3579734219269103
+    ],
+    "camera_position": [
+      -0.36624999999999996,
+      1.5,
+      3.504131595410415
+    ],
+    "camera_rotation": [
+      -0.11362126245847178,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -1.5,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.5,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.7038337058107165,
+    "created_at": "2026-05-19T16:23:42.355065"
+  },
+  {
+    "id": "12bc5bf0",
+    "image_path": "/uploads/rooms/originals/12bc5bf0.jpeg",
+    "depth_map_path": "/uploads/rooms/analysis/12bc5bf0_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/12bc5bf0_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8006644518272426
+      ],
+      [
+        0.09,
+        0.9991694352159468
+      ],
+      [
+        0.999375,
+        0.9651162790697675
+      ],
+      [
+        0.999375,
+        0.8006644518272426
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 74.04384771201632,
+    "vanishing_point": [
+      0.476875,
+      0.4568106312292359
+    ],
+    "camera_position": [
+      0.04625000000000001,
+      1.5,
+      3.297807614399184
+    ],
+    "camera_rotation": [
+      -0.034551495016611304,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -1.5,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.5,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6993998258240707,
+    "created_at": "2026-05-19T16:34:11.065365"
+  },
+  {
+    "id": "6192bd7a",
+    "image_path": "/uploads/rooms/originals/6192bd7a.jpeg",
+    "depth_map_path": "/uploads/rooms/analysis/6192bd7a_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/6192bd7a_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8006644518272426
+      ],
+      [
+        0.09,
+        0.9991694352159468
+      ],
+      [
+        0.999375,
+        0.9651162790697675
+      ],
+      [
+        0.999375,
+        0.8006644518272426
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 74.04384771201632,
+    "vanishing_point": [
+      0.476875,
+      0.4568106312292359
+    ],
+    "camera_position": [
+      0.04625000000000001,
+      1.5,
+      3.297807614399184
+    ],
+    "camera_rotation": [
+      -0.034551495016611304,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -1.5,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.5,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6993998258240707,
+    "created_at": "2026-05-19T19:02:45.076073"
+  },
+  {
+    "id": "89fe56b2",
+    "image_path": "/uploads/rooms/originals/89fe56b2.png",
+    "depth_map_path": "/uploads/rooms/analysis/89fe56b2_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/89fe56b2_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.17718794835007173,
+        0.8670212765957447
+      ],
+      [
+        0.2700860832137733,
+        0.8909574468085106
+      ],
+      [
+        0.251793400286944,
+        0.9993351063829787
+      ],
+      [
+        0.9996413199426112,
+        0.9993351063829787
+      ],
+      [
+        0.9175035868005739,
+        0.800531914893617
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.43904245420774,
+    "vanishing_point": [
+      0.37374461979913914,
+      0.8125
+    ],
+    "camera_position": [
+      0.2525107604017217,
+      1.5,
+      3.5280478772896133
+    ],
+    "camera_rotation": [
+      0.25,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.53,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.7,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.76,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          0.53,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6465478684944204,
+    "created_at": "2026-05-19T19:19:53.081412"
+  },
+  {
+    "id": "9b7eb590",
+    "image_path": "/uploads/rooms/originals/9b7eb590.jpeg",
+    "depth_map_path": "/uploads/rooms/analysis/9b7eb590_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/9b7eb590_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.32,
+        0.9036544850498339
+      ],
+      [
+        0.999375,
+        0.9991694352159468
+      ],
+      [
+        0.85875,
+        0.8571428571428571
+      ],
+      [
+        0.975625,
+        0.8006644518272426
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 72.30382225662235,
+    "vanishing_point": [
+      0.584375,
+      0.4011627906976744
+    ],
+    "camera_position": [
+      -0.16874999999999996,
+      1.5,
+      3.3848088871688824
+    ],
+    "camera_rotation": [
+      -0.07906976744186048,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          0.96,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -0.06,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.98,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          0.96,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.5603019821497659,
+    "created_at": "2026-05-19T20:27:42.881306"
+  },
+  {
+    "id": "e761af54",
+    "image_path": "/uploads/rooms/originals/e761af54.png",
+    "depth_map_path": "/uploads/rooms/analysis/e761af54_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/e761af54_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8002232142857143
+      ],
+      [
+        0.0,
+        0.9994419642857143
+      ],
+      [
+        0.999581589958159,
+        0.9994419642857143
+      ],
+      [
+        0.907112970711297,
+        0.8002232142857143
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 72.5775906116853,
+    "vanishing_point": [
+      0.42677824267782427,
+      0.5926339285714286
+    ],
+    "camera_position": [
+      0.14644351464435146,
+      1.5,
+      3.371120469415735
+    ],
+    "camera_rotation": [
+      0.07410714285714289,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -1.5,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          1.5,
+          0,
+          -2.4
+        ],
+        "label": "right side"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -0.0,
+          0,
+          -2.7
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.6874916193990228,
+    "created_at": "2026-05-19T20:28:10.375597"
+  },
+  {
+    "id": "19363bea",
+    "image_path": "/uploads/rooms/originals/19363bea.png",
+    "depth_map_path": "/uploads/rooms/analysis/19363bea_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/19363bea_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8001119820828667
+      ],
+      [
+        0.00045167118337850043,
+        0.9983202687569989
+      ],
+      [
+        0.13414634146341464,
+        0.996080627099664
+      ],
+      [
+        0.058265582655826556,
+        0.9137737961926092
+      ],
+      [
+        0.16485998193315266,
+        0.8051511758118701
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 72.0,
+    "vanishing_point": [
+      0.5022583559168925,
+      0.1875699888017917
+    ],
+    "camera_position": [
+      -0.004516711833784992,
+      1.5,
+      3.5442563911037395
+    ],
+    "camera_rotation": [
+      -0.24994400895856664,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -2.75,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.69
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 1.0,
+    "created_at": "2026-05-19T20:35:21.368197"
+  },
+  {
+    "id": "a489cbf9",
+    "image_path": "/uploads/rooms/originals/a489cbf9.png",
+    "depth_map_path": "/uploads/rooms/analysis/a489cbf9_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/a489cbf9_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8001119820828667
+      ],
+      [
+        0.00045167118337850043,
+        0.9983202687569989
+      ],
+      [
+        0.13414634146341464,
+        0.996080627099664
+      ],
+      [
+        0.058265582655826556,
+        0.9137737961926092
+      ],
+      [
+        0.16485998193315266,
+        0.8051511758118701
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.1148721779252,
+    "vanishing_point": [
+      0.5022583559168925,
+      0.1875699888017917
+    ],
+    "camera_position": [
+      -0.004516711833784992,
+      1.5,
+      3.5442563911037395
+    ],
+    "camera_rotation": [
+      -0.24994400895856664,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -2.75,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.69
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.4992690007369731,
+    "created_at": "2026-05-19T20:41:09.280569"
+  },
+  {
+    "id": "ce392353",
+    "image_path": "/uploads/rooms/originals/ce392353.png",
+    "depth_map_path": "/uploads/rooms/analysis/ce392353_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/ce392353_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8001119820828667
+      ],
+      [
+        0.00045167118337850043,
+        0.9983202687569989
+      ],
+      [
+        0.13414634146341464,
+        0.996080627099664
+      ],
+      [
+        0.058265582655826556,
+        0.9137737961926092
+      ],
+      [
+        0.16485998193315266,
+        0.8051511758118701
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.1148721779252,
+    "vanishing_point": [
+      0.5022583559168925,
+      0.1875699888017917
+    ],
+    "camera_position": [
+      -0.004516711833784992,
+      1.5,
+      3.5442563911037395
+    ],
+    "camera_rotation": [
+      -0.24994400895856664,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -2.75,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.69
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.4992690007369731,
+    "created_at": "2026-05-19T21:01:19.168295"
+  },
+  {
+    "id": "07595a16",
+    "image_path": "/uploads/rooms/originals/07595a16.png",
+    "depth_map_path": "/uploads/rooms/analysis/07595a16_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/07595a16_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8001119820828667
+      ],
+      [
+        0.00045167118337850043,
+        0.9983202687569989
+      ],
+      [
+        0.13414634146341464,
+        0.996080627099664
+      ],
+      [
+        0.058265582655826556,
+        0.9137737961926092
+      ],
+      [
+        0.16485998193315266,
+        0.8051511758118701
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.1148721779252,
+    "vanishing_point": [
+      0.5022583559168925,
+      0.1875699888017917
+    ],
+    "camera_position": [
+      -0.004516711833784992,
+      1.5,
+      3.5442563911037395
+    ],
+    "camera_rotation": [
+      -0.24994400895856664,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -2.75,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.69
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.4992690007369731,
+    "created_at": "2026-05-19T22:17:09.871859"
+  },
+  {
+    "id": "e1eba08b",
+    "image_path": "/uploads/rooms/originals/e1eba08b.png",
+    "depth_map_path": "/uploads/rooms/analysis/e1eba08b_depth.png",
+    "floor_mask_path": "/uploads/rooms/analysis/e1eba08b_floor_mask.png",
+    "floor_polygon": [
+      [
+        0.0,
+        0.8001119820828667
+      ],
+      [
+        0.00045167118337850043,
+        0.9983202687569989
+      ],
+      [
+        0.13414634146341464,
+        0.996080627099664
+      ],
+      [
+        0.058265582655826556,
+        0.9137737961926092
+      ],
+      [
+        0.16485998193315266,
+        0.8051511758118701
+      ]
+    ],
+    "room_width_cm": 365.76,
+    "room_depth_cm": 457.2,
+    "floor_y": -1.5,
+    "perspective_fov": 69.1148721779252,
+    "vanishing_point": [
+      0.5022583559168925,
+      0.1875699888017917
+    ],
+    "camera_position": [
+      -0.004516711833784992,
+      1.5,
+      3.5442563911037395
+    ],
+    "camera_rotation": [
+      -0.24994400895856664,
+      0.0,
+      0.0
+    ],
+    "suggested_placements": [
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.4
+        ],
+        "label": "center"
+      },
+      {
+        "position": [
+          -2.75,
+          0,
+          -2.4
+        ],
+        "label": "left side"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.1
+        ],
+        "label": "back wall"
+      },
+      {
+        "position": [
+          -2.51,
+          0,
+          -2.69
+        ],
+        "label": "front area"
+      }
+    ],
+    "confidence": 0.4992690007369731,
+    "created_at": "2026-05-19T22:42:16.450238"
   }
 ]

@@ -21,10 +21,11 @@ def _get_session():
     if _rembg_session is None:
         try:
             from rembg import new_session
-            # isnet-general-use is much better for product/furniture photos
-            # than u2net — it preserves edges and thin parts like legs
-            _rembg_session = new_session("isnet-general-use")
-            logger.info("rembg session initialized with isnet-general-use model")
+            # birefnet-general is the best rembg model for complex scenes
+            # — handles indoor backgrounds, shadows, and dark objects much
+            # better than isnet-general-use or u2net
+            _rembg_session = new_session("birefnet-general")
+            logger.info("rembg session initialized with birefnet-general model")
         except ImportError:
             logger.warning("rembg not installed, using fallback background removal")
             _rembg_session = "fallback"
@@ -61,31 +62,24 @@ def remove_background(input_path: Path, output_path: Path) -> Path:
         # Read input image
         input_bytes = input_path.read_bytes()
         
-        # Remove background with conservative settings:
-        # - alpha_matting=True for smooth edges
-        # - HIGH foreground threshold = keeps MORE of the furniture
-        # - LOW background threshold = removes MORE background
-        # - SMALL erode size = preserves thin parts (legs, handles)
+        # Remove background — NO alpha_matting.
+        # Alpha matting causes Cholesky decomposition crashes on video frames
+        # with complex indoor backgrounds (shadows, blinds, reflections).
+        # Clean rembg without matting is more reliable; the temporal
+        # consensus pipeline handles edge smoothing separately.
         output_bytes = remove(
             input_bytes,
             session=session,
             bgcolor=None,  # Transparent background
-            alpha_matting=True,
-            alpha_matting_foreground_threshold=270,  # Very high = keep more foreground
-            alpha_matting_background_threshold=20,   # Low = be aggressive removing BG
-            alpha_matting_erode_size=5,               # Small = preserve thin parts
+            alpha_matting=False,
         )
         
-        # Post-process: ensure no partial transparency on the furniture itself
+        # Minimal post-processing: just clean up near-zero noise
         output_img = Image.open(io.BytesIO(output_bytes)).convert("RGBA")
-        
-        # Strengthen the alpha channel — anything above 50% alpha becomes fully opaque
-        # This prevents the "faded edges" problem
         import numpy as np
         arr = np.array(output_img)
         alpha = arr[:, :, 3]
-        alpha[alpha > 128] = 255  # Make semi-transparent furniture pixels fully opaque
-        alpha[alpha <= 30] = 0    # Make near-transparent pixels fully transparent
+        alpha[alpha <= 10] = 0  # Kill truly invisible noise pixels only
         arr[:, :, 3] = alpha
         output_img = Image.fromarray(arr)
         

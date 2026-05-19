@@ -16,12 +16,15 @@ class FurnitureItem(BaseModel):
     original_image: str = ""
     processed_image: str = ""
     angle_images: list = []
+    angle_labels: list = []
     sprite_sheet: Optional[str] = None
     angle_count: int = 0
     model_url: str = ""
     thumbnail: str = ""
     builtin: bool = False
     generation_status: str = ""
+    upload_mode: str = "quick"
+    video_source: str = ""
     created_at: str = ""
 
 

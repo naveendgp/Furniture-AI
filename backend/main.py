@@ -9,10 +9,11 @@ from fastapi.staticfiles import StaticFiles
 
 from routers import furniture, rooms, enhance
 
-# Configure logging
+# Configure logging (force=True overrides uvicorn's default logger)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    force=True,
 )
 logger = logging.getLogger(__name__)
 

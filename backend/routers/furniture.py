@@ -11,6 +11,7 @@ from models.schemas import FurnitureItem, FurnitureListResponse
 from services.background_removal import remove_background
 from services.catalog import get_builtin_catalog
 from services.model_generation import is_3d_generation_available, generate_3d_model
+from services.video_pipeline import process_furniture_video
 from utils.storage import (
     FURNITURE_DB, FURNITURE_ORIGINALS, FURNITURE_PROCESSED,
     add_item, delete_item, generate_id, get_item, load_json, save_upload, update_item,
@@ -246,6 +247,187 @@ async def upload_multiview_furniture(
     return item_data
 
 
+# ─── 360° Video Upload ───────────────────────────────────────────────
+
+VIDEOS_DIR = Path(__file__).resolve().parent.parent / "uploads" / "furniture" / "videos"
+VIDEOS_DIR.mkdir(parents=True, exist_ok=True)
+
+
+@router.post("/extract-angles")
+async def extract_angles_from_video(
+    name: str = Form(...),
+    category: str = Form(...),
+    width: float = Form(100),
+    height: float = Form(100),
+    depth: float = Form(50),
+    video: UploadFile = File(...),
+):
+    """
+    Phase 1: Extract angle frames from 360° video WITHOUT bg removal.
+    Returns raw frames so user can review before bg removal.
+    """
+    from services.video_pipeline import extract_angles_only
+
+    allowed_types = {"video/mp4", "video/quicktime", "video/x-msvideo", "video/mpeg"}
+    if video.content_type and video.content_type not in allowed_types:
+        if not video.content_type.startswith("video/"):
+            raise HTTPException(status_code=400, detail="File must be a video (MP4/MOV)")
+
+    item_id = generate_id()
+    ext = Path(video.filename or "video.mp4").suffix or ".mp4"
+    video_filename = f"{item_id}{ext}"
+
+    video_content = await video.read()
+    video_path = VIDEOS_DIR / video_filename
+    video_path.write_bytes(video_content)
+    logger.info(f"Video saved: {video_path} ({len(video_content) // 1024}KB)")
+
+    item_dir = MULTIVIEW_DIR / item_id
+
+    try:
+        raw_image_urls, angle_labels = extract_angles_only(
+            video_path=video_path, output_dir=item_dir, item_id=item_id,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except Exception as e:
+        logger.error(f"Video extraction error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"Extraction failed: {str(e)}")
+
+    if not raw_image_urls:
+        raise HTTPException(status_code=422, detail="No angles extracted")
+
+    item_data = {
+        "id": item_id,
+        "name": name,
+        "category": category,
+        "width": width,
+        "height": height,
+        "depth": depth,
+        "original_image": raw_image_urls[0] if raw_image_urls else "",
+        "processed_image": "",
+        "angle_images": raw_image_urls,
+        "angle_labels": angle_labels,
+        "sprite_sheet": None,
+        "angle_count": len(raw_image_urls),
+        "model_url": "",
+        "thumbnail": "",
+        "builtin": False,
+        "generation_status": "extracting",
+        "upload_mode": "video",
+        "video_source": f"/uploads/furniture/videos/{video_filename}",
+        "created_at": datetime.now().isoformat(),
+    }
+
+    add_item(FURNITURE_DB, item_data)
+    logger.info(f"Angles extracted: {name} (id={item_id}, {len(angle_labels)} angles)")
+    return item_data
+
+
+@router.post("/{item_id}/remove-backgrounds")
+async def remove_backgrounds(item_id: str):
+    """
+    Phase 2: Run bg removal on raw angle frames.
+    Called after user reviews and optionally replaces angles.
+    """
+    from services.video_pipeline import process_backgrounds
+
+    item = get_item(FURNITURE_DB, item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
+
+    item_dir = MULTIVIEW_DIR / item_id
+    angle_labels = item.get("angle_labels", [])
+    if not angle_labels:
+        raise HTTPException(status_code=422, detail="No angle labels found")
+
+    try:
+        processed_urls, processed_labels = process_backgrounds(
+            item_id=item_id, output_dir=item_dir, angle_labels=angle_labels,
+        )
+    except Exception as e:
+        logger.error(f"BG removal error: {e}", exc_info=True)
+        raise HTTPException(status_code=500, detail=f"BG removal failed: {str(e)}")
+
+    processed_main = f"{item_id}.png"
+    processed_main_path = FURNITURE_PROCESSED / processed_main
+    front_img = item_dir / "front.png"
+    if front_img.exists():
+        import shutil
+        shutil.copy2(front_img, processed_main_path)
+    elif processed_urls:
+        first_img = item_dir / f"{processed_labels[0]}.png"
+        if first_img.exists():
+            import shutil
+            shutil.copy2(first_img, processed_main_path)
+
+    update_item(FURNITURE_DB, item_id, {
+        "angle_images": processed_urls,
+        "angle_labels": processed_labels,
+        "angle_count": len(processed_urls),
+        "processed_image": f"/uploads/furniture/processed/{processed_main}",
+        "generation_status": "completed",
+    })
+
+    logger.info(f"BG removal done: {item_id} ({len(processed_labels)} angles)")
+    return {
+        "id": item_id, "angle_images": processed_urls,
+        "angle_labels": processed_labels, "status": "completed",
+    }
+
+
+@router.post("/upload-video")
+async def upload_furniture_video(
+    name: str = Form(...),
+    category: str = Form(...),
+    width: float = Form(100),
+    height: float = Form(100),
+    depth: float = Form(50),
+    video: UploadFile = File(...),
+):
+    """Legacy: Full pipeline in one call."""
+    from services.video_pipeline import process_furniture_video
+
+    item_id = generate_id()
+    ext = Path(video.filename or "video.mp4").suffix or ".mp4"
+    video_filename = f"{item_id}{ext}"
+    video_content = await video.read()
+    video_path = VIDEOS_DIR / video_filename
+    video_path.write_bytes(video_content)
+    item_dir = MULTIVIEW_DIR / item_id
+
+    try:
+        angle_image_urls, angle_labels = process_furniture_video(
+            video_path=video_path, output_dir=item_dir, item_id=item_id,
+        )
+    except ValueError as e:
+        raise HTTPException(status_code=422, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Processing failed: {str(e)}")
+
+    processed_main = f"{item_id}.png"
+    processed_main_path = FURNITURE_PROCESSED / processed_main
+    front_img = item_dir / "front.png"
+    if front_img.exists():
+        import shutil
+        shutil.copy2(front_img, processed_main_path)
+
+    item_data = {
+        "id": item_id, "name": name, "category": category,
+        "width": width, "height": height, "depth": depth,
+        "original_image": angle_image_urls[0] if angle_image_urls else "",
+        "processed_image": f"/uploads/furniture/processed/{processed_main}",
+        "angle_images": angle_image_urls, "angle_labels": angle_labels,
+        "sprite_sheet": None, "angle_count": len(angle_image_urls),
+        "model_url": "", "thumbnail": "", "builtin": False,
+        "generation_status": "completed", "upload_mode": "video",
+        "video_source": f"/uploads/furniture/videos/{video_filename}",
+        "created_at": datetime.now().isoformat(),
+    }
+    add_item(FURNITURE_DB, item_data)
+    return item_data
+
+
 # ─── Existing Endpoints ───────────────────────────────────────────────
 
 @router.get("/generation-status")
@@ -354,6 +536,95 @@ async def reprocess_all_furniture():
             results.append({"status": "failed", "id": item["id"], "error": str(e)})
 
     return {"total": len(results), "results": results}
+
+
+# ─── Replace Single Angle Image ──────────────────────────────────────
+
+@router.patch("/{item_id}/replace-angle")
+async def replace_angle_image(
+    item_id: str,
+    angle: str = Form(...),
+    image: UploadFile = File(...),
+):
+    """
+    Replace a single angle image for a furniture item.
+
+    Used during the video upload review step when the user wants to
+    manually fix one angle that wasn't extracted well.
+    Runs background removal and normalization on the replacement image.
+    """
+    valid_angles = {"front", "front_left", "left", "back_left", "back", "back_right", "right", "front_right"}
+    if angle not in valid_angles:
+        raise HTTPException(status_code=400, detail=f"Invalid angle: '{angle}'. Valid: {valid_angles}")
+
+    item = get_item(FURNITURE_DB, item_id)
+    if not item:
+        raise HTTPException(status_code=404, detail="Furniture item not found")
+
+    if not image.content_type or not image.content_type.startswith("image/"):
+        raise HTTPException(status_code=400, detail="File must be an image")
+
+    mv_dir = MULTIVIEW_DIR / item_id
+    mv_dir.mkdir(parents=True, exist_ok=True)
+
+    # Save raw upload
+    content = await image.read()
+    ext = Path(image.filename or "img.png").suffix or ".png"
+    raw_path = mv_dir / f"{angle}_raw{ext}"
+    raw_path.write_bytes(content)
+
+    # Background removal
+    processed_path = mv_dir / f"{angle}.png"
+    try:
+        remove_background(raw_path, processed_path)
+    except Exception as e:
+        logger.warning(f"BG removal failed for replacement {angle}: {e}")
+        import shutil
+        shutil.copy2(raw_path, processed_path)
+
+    # Normalize: crop, pad, center (same as video pipeline)
+    try:
+        from services.video_pipeline import normalize_image
+        normalize_image(processed_path, processed_path)
+    except Exception as e:
+        logger.warning(f"Normalization failed for {angle}: {e}")
+
+    # Update the item's angle data if angle is new
+    url = f"/uploads/furniture/multiview/{item_id}/{angle}.png"
+    angle_images = item.get("angle_images", [])
+    angle_labels = item.get("angle_labels", [])
+
+    if angle in angle_labels:
+        # URL doesn't change, image file was replaced in-place
+        pass
+    else:
+        # Add the new angle
+        angle_labels.append(angle)
+        angle_images.append(url)
+
+    # If replacing the front image, also update the main processed image
+    if angle == "front":
+        processed_main = f"{item_id}.png"
+        processed_main_path = FURNITURE_PROCESSED / processed_main
+        import shutil
+        shutil.copy2(processed_path, processed_main_path)
+
+    update_item(FURNITURE_DB, item_id, {
+        "angle_images": angle_images,
+        "angle_labels": angle_labels,
+        "angle_count": len(angle_images),
+    })
+
+    logger.info(f"Replaced angle '{angle}' for item {item_id}")
+
+    return {
+        "status": "replaced",
+        "id": item_id,
+        "angle": angle,
+        "url": url,
+        "angle_images": angle_images,
+        "angle_labels": angle_labels,
+    }
 
 
 @router.delete("/{item_id}")
